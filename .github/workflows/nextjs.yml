@@ -1,37 +1,36 @@
-name: Next.js CI/CD
+name: Next.js SaaS ERP Deploy
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: "npm"
 
       - name: Install dependencies
-        working-directory: ./frontend
         run: npm install
+        working-directory: ./frontend
 
       - name: Build Next.js
-        working-directory: ./frontend
         run: npm run build
-
-      - name: Export static files
         working-directory: ./frontend
-        run: npm run export
 
-      - name: Upload build artifact
+      - name: Export static
+        run: npm run export
+        working-directory: ./frontend
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: nextjs-build
+          name: frontend-build
           path: frontend/out
