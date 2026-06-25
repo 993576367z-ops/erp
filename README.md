@@ -1,16 +1,13 @@
-  php_railway_translator/
-│
-├── index.php
-├── Dockerfile
-├── railway.json
-├── README.md
-├── .gitignore
-│
-├── api/
-│   └── translate.php
-│
-├── database/
-│   └── config.php
-│
-└── sql/
-    └── translator.sql
+# HELI-X Railway Edition
+
+部署：
+
+1. 上传到 GitHub
+2. Railway New Project
+3. Deploy from GitHub Repo
+4. 自动构建 Docker
+
+支持：
+- PHP 8.2
+- Railway
+- Docker

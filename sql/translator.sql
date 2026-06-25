@@ -1,0 +1,6 @@
+CREATE TABLE translations(
+id BIGINT PRIMARY KEY AUTO_INCREMENT,
+source_text TEXT,
+translated_text TEXT,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
